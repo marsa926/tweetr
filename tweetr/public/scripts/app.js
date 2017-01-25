@@ -60,32 +60,43 @@ function renderTweets(tweets){
   for (var i = 0; i < tweets.length; i++){
     createTweetElement(tweets[i]);
   }
-
 }
+
+///////////escape function//////////////
+function escape(str) {
+    var div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
+////////////////////////////////////////
 
 
 function createTweetElement(tweet){
 
   var html = `<article class="TweetLog">
     <header id="posted-tweets">
-      <img class="image" src="${(tweet.user.avatars.regular)}">
-      <h1 class="name">${(tweet.user.name)} </h1>
-      <p class="email"> ${(tweet.user.handle)} </p>
+      <img class="image" src="${escape(tweet.user.avatars.regular)}">
+      <h1 class="name">${escape(tweet.user.name)} </h1>
+      <p class="email"> ${escape(tweet.user.handle)} </p>
     </header>
-      <p class="text"> ${(tweet.content.text)} </p>
+      <p class="text"> ${escape(tweet.content.text)} </p>
     <footer>
-      <p class="date"> ${(tweet.created_at)} </p>
+      <p class="date"> ${escape(tweet.created_at)} </p>
       <i class="fa fa-flag" aria-hidden="true"></i>
-      <i class="fa fa-share-alt" aria-hidden="true"></i>
+      <i class="fa fa-retweet" aria-hidden="true"></i>
       <i class="fa fa-heart" aria-hidden="true"></i>
     </footer>
-    </article>`;
-    console.log(html);
-  $("#posted-tweets").append(html);
+  </article>`;
+
+  // $container.append(escape(html));
+    $("#posted-tweets").append(html);
+// }
 }
 
-renderTweets(tweetData);
 
+// var $container = $("#posted-tweets")
+
+renderTweets(tweetData);
 
 });
 // // var $tweet =$("<article>").addClass("tweet");

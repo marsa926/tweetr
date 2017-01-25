@@ -1,3 +1,5 @@
+
+
  #posted-tweets article:hover{
   opacity: 1;
 }
@@ -10,6 +12,8 @@
   margin: 0 auto;
   background-color: white;
   opacity: 0.5;
+  margin-bottom: 10px;
+
 }
 
 
@@ -18,7 +22,7 @@
   border-radius: 5px;
   height: 70px;
   margin-top: -21px;
-
+  padding-bottom: 20px
 }
 
 
@@ -56,6 +60,7 @@
  #posted-tweets footer{
   border-top: 1px solid silver;
   height: 30px;
+
 }
 
 #posted-tweets .date{
