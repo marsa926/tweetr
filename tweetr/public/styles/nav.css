@@ -20,3 +20,21 @@
   font-size: 200%;
   padding-left: 10px
 }
+
+#nav-bar .newpost{
+  float: right;
+  background: white;
+  height: 70px;
+  width: 130px;
+  margin-top: 5px;
+  border-radius: 5%;
+  border: 4px darkgray;
+  font-weight: bolder;
+  font-size: 120%;
+  opacity: 0.7;
+
+}
+
+#nav-bar .newpost:hover{
+  opacity: 1;
+}

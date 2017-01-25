@@ -51,8 +51,10 @@
 }
 
  #posted-tweets .text{
+  word-wrap: break-word;
   text-align: left;
   padding: 10px;
+  margin: auto;
 
 }
 

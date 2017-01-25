@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+
   $(".new-tweet form textarea").on("keyup", function(event){
     var number = $(this).val();
     console.log(number.length);
