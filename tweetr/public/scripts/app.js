@@ -88,13 +88,9 @@ function createTweetElement(tweet){
     </footer>
   </article>`;
 
-  // $container.append(escape(html));
-    $("#posted-tweets").append(html);
-// }
+
 }
 
-
-// var $container = $("#posted-tweets")
 
 renderTweets(tweetData);
 
