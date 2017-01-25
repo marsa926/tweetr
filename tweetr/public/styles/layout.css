@@ -26,11 +26,12 @@ body {
  */
 
  .container{
+  position: relative;
+  text-align: center;
   width: 450px;
   background: white;
   display: table;
   margin: 0 auto;
-  position: relative;
   top:  80px;
   padding:50px 0px;
 
