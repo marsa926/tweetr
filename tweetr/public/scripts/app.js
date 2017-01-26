@@ -7,7 +7,7 @@
 
 
 $(document).ready(function(){
-
+//hide the tweet-form when the page is loaded//
 $('.new-tweet').hide();
 
 var tweetData = [
@@ -118,7 +118,7 @@ $("form.post").on('submit', function(event){
   var content = $('textarea').val();
   if(content.length > 140){
      alert('Error! Your tweet is too long!');
-  } else if(!content || content.match(/\s/)){
+  } else if(!content || /^\s+$/.test(content)){
     alert('Error! You cannot post empty tweet!');
   } else {
     $.ajax({
@@ -130,11 +130,13 @@ $("form.post").on('submit', function(event){
   }
 });
 
+
+//when button is clicked, you slide-down the tweet-form//
 $(".newpost").on('click', function(event){
   // console.log("works");
   var newTweet = $('.new-tweet');
   newTweet.slideToggle();
-  $("textarea").select();
+  $("textarea").focus();
 });
 
 

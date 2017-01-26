@@ -28,8 +28,8 @@
   width: 130px;
   margin-top: 5px;
   border-radius: 5%;
-  border: 4px darkgray;
-  font-weight: bolder;
+  border: 1px solid black;
+  font-weight: bold;
   font-size: 120%;
   opacity: 0.7;
 
