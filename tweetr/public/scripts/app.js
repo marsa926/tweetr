@@ -41,6 +41,35 @@ function escape(str) {
   return div.innerHTML;
 }
 
+function timeSince(date) {
+
+    var seconds = Math.floor((new Date() - date) / 1000);
+
+    var interval = Math.floor(seconds / 31536000);
+
+    if (interval > 1) {
+        return interval + " years";
+    }
+    interval = Math.floor(seconds / 2592000);
+    if (interval > 1) {
+        return interval + " months";
+    }
+    interval = Math.floor(seconds / 86400);
+    if (interval > 1) {
+        return interval + " days";
+    }
+    interval = Math.floor(seconds / 3600);
+    if (interval > 1) {
+        return interval + " hours";
+    }
+    interval = Math.floor(seconds / 60);
+    if (interval > 1) {
+        return interval + " minutes";
+    }
+    return Math.floor(seconds) + " seconds";
+}
+
+
 
 function createTweetElement(tweet){
   var html = `<article class="TweetLog">
@@ -51,7 +80,7 @@ function createTweetElement(tweet){
   </header>
     <p class="text"> ${escape(tweet.content.text)} </p>
   <footer>
-    <p class="date"> ${escape(tweet.created_at)} </p>
+    <p class="date"> ${escape(timeSince(tweet.created_at))} </p>
     <i class="fa fa-flag" aria-hidden="true"></i>
     <i class="fa fa-retweet" aria-hidden="true"></i>
     <i class="fa fa-heart" aria-hidden="true"></i>
