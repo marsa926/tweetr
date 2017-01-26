@@ -11,8 +11,10 @@
   margin-bottom: 10px;
 }
 
-
-
+.container h2{
+  border-bottom: 1px solid black;
+  text-align: left;
+}
 .container .new-tweet textarea{
   width: 100%;
   padding: 5px;
@@ -27,7 +29,6 @@
   font-size: 80%;
   font-style: italic;
   padding: 5px 5px;
-
 }
 
 .container .new-tweet span.overcount{

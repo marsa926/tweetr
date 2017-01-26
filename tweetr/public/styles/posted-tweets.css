@@ -4,7 +4,6 @@
   opacity: 1;
 }
 
-
  #posted-tweets article{
   width: 380px;
   border: 1px solid silver;
@@ -13,9 +12,7 @@
   background-color: white;
   opacity: 0.5;
   margin-bottom: 10px;
-
 }
-
 
  #posted-tweets header{
   background: #eee;
@@ -25,7 +22,6 @@
   padding-bottom: 20px
 }
 
-
  #posted-tweets header .image{
   float:left;
   border-radius: 10px;
@@ -34,12 +30,9 @@
   padding: 5px;
 }
 
-
-
  #posted-tweets .name{
   text-align: left;
   padding: 15px 5px;
-
 }
 
  #posted-tweets .email{
@@ -47,7 +40,6 @@
   margin-top: -70px;
   font-size: 80%;
   padding: 5px;
-
 }
 
  #posted-tweets .text{
@@ -55,14 +47,11 @@
   text-align: left;
   padding: 10px;
   margin: auto;
-
 }
-
 
  #posted-tweets footer{
   border-top: 1px solid silver;
   height: 30px;
-
 }
 
 #posted-tweets .date{
@@ -71,15 +60,10 @@
   text-align: center;
   margin-top: 10px;
   padding-left: 5px;
-
-
 }
-
 
 #posted-tweets footer i{
   float: right;
   padding: 10px;
   font-size: 70%;
-
-
 }

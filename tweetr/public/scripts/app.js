@@ -62,7 +62,6 @@ return html;
 
 //When you submit your tweet, if the content is empty/over 140 chars-
 // I will shoot an error msg, otherwise I'll post a new tweet
-
 $("form.post").on('submit', function(event){
   event.preventDefault();
   console.log( $(this).serialize() );
@@ -78,6 +77,7 @@ $("form.post").on('submit', function(event){
       data: $(this).serialize(),
       success: loadTweets
     });
+    $('textarea').val("");
   }
 });
 
@@ -87,8 +87,6 @@ $(".newpost").on('click', function(event){
   newTweet.slideToggle();
   $("textarea").focus();
 });
-
-
 
 //Function. Set. ACTION!
 loadTweets();
