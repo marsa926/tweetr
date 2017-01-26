@@ -3,6 +3,7 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
+
 html {
   box-sizing: border-box;
 }
@@ -14,7 +15,7 @@ html {
  * Global layout stuff
  */
 
-body {
+body{
   font-family: 'Roboto Condensed', sans-serif;
   margin: 0;
   color: #244751;
@@ -33,6 +34,5 @@ body {
   display: table;
   margin: 0 auto;
   top:  80px;
-  padding:50px 0px;
-
+  padding-top: 50px;
  }

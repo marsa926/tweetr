@@ -5,61 +5,13 @@
  */
 
 
-
+//DOM ready function
 $(document).ready(function(){
-//hide the tweet-form when the page is loaded//
+
+//Hide the post tweet-form when the page is loaded
 $('.new-tweet').hide();
 
-var tweetData = [
-
-//   {
-//     "user": {
-//       "name": "Newton",
-//       "avatars": {
-//         "small":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png",
-//         "regular": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188.png",
-//         "large":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_200.png"
-//       },
-//       "handle": "@SirIsaac"
-//     },
-//     "content": {
-//       "text": "If I have seen further it is by standing on the shoulders of giants"
-//     },
-//     "created_at": 1461116232227
-//   },
-//   {
-//     "user": {
-//       "name": "Descartes",
-//       "avatars": {
-//         "small":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_50.png",
-//         "regular": "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc.png",
-//         "large":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_200.png"
-//       },
-//       "handle": "@rd" },
-//     "content": {
-//       "text": "Je pense , donc je suis"
-//     },
-//     "created_at": 1461113959088
-//   },
-// {
-//   "user": {
-//     "name": "Newton",
-//     "avatars": {
-//       "small":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png",
-//       "regular": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188.png",
-//       "large":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_200.png"
-//     },
-//     "handle": "@SirIsaac"
-//   },
-//   "content": {
-//     "text": "If I have seen further it is by standing on the shoulders of giants"
-//   },
-//   "created_at": 1461116232227
-// }
-];
-
-
-
+var tweetData = [];
 
 function loadTweets(){
   $.ajax({
@@ -82,43 +34,42 @@ function renderTweets(tweets){
   }
 }
 
-///////////escape function//////////////
+//escape function: Make sure people can't post any scipt in their tweets.
 function escape(str) {
-    var div = document.createElement('div');
-    div.appendChild(document.createTextNode(str));
-    return div.innerHTML;
-  }
-////////////////////////////////////////
+  var div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
 
 
 function createTweetElement(tweet){
-
   var html = `<article class="TweetLog">
-    <header id="posted-tweets">
-      <img class="image" src="${escape(tweet.user.avatars.regular)}">
-      <h1 class="name">${escape(tweet.user.name)} </h1>
-      <p class="email"> ${escape(tweet.user.handle)} </p>
-    </header>
-      <p class="text"> ${escape(tweet.content.text)} </p>
-    <footer>
-      <p class="date"> ${escape(tweet.created_at)} </p>
-      <i class="fa fa-flag" aria-hidden="true"></i>
-      <i class="fa fa-retweet" aria-hidden="true"></i>
-      <i class="fa fa-heart" aria-hidden="true"></i>
-    </footer>
+  <header id="posted-tweets">
+    <img class="image" src="${escape(tweet.user.avatars.regular)}">
+    <h1 class="name">${escape(tweet.user.name)} </h1>
+    <p class="email"> ${escape(tweet.user.handle)} </p>
+  </header>
+    <p class="text"> ${escape(tweet.content.text)} </p>
+  <footer>
+    <p class="date"> ${escape(tweet.created_at)} </p>
+    <i class="fa fa-flag" aria-hidden="true"></i>
+    <i class="fa fa-retweet" aria-hidden="true"></i>
+    <i class="fa fa-heart" aria-hidden="true"></i>
+  </footer>
   </article>`;
 return html;
-
 }
 
-//when you submit your new post. if you have nothing in your content, will shot an error other wise it will post a new tweet//
+//When you submit your tweet, if the content is empty/over 140 chars-
+// I will shoot an error msg, otherwise I'll post a new tweet
+
 $("form.post").on('submit', function(event){
   event.preventDefault();
   console.log( $(this).serialize() );
   var content = $('textarea').val();
   if(content.length > 140){
      alert('Error! Your tweet is too long!');
-  } else if(!content || /^\s+$/.test(content)){
+  } else if (!content || /^\s+$/.test(content)){
     alert('Error! You cannot post empty tweet!');
   } else {
     $.ajax({
@@ -130,10 +81,8 @@ $("form.post").on('submit', function(event){
   }
 });
 
-
-//when button is clicked, you slide-down the tweet-form//
+//When button is clicked, tweet-form will slide down
 $(".newpost").on('click', function(event){
-  // console.log("works");
   var newTweet = $('.new-tweet');
   newTweet.slideToggle();
   $("textarea").focus();
@@ -141,15 +90,8 @@ $(".newpost").on('click', function(event){
 
 
 
-
+//Function. Set. ACTION!
 loadTweets();
 
 });
 
-
-// // var $tweet =$("<article>").addClass("tweet");
-// var $tweet = createTweetElement(tweetData);
-
-// console.log($tweet); // to see what it looks like
-// $("#posted-tweets").append($tweet);
-// });
