@@ -1,0 +1,67 @@
+#posted-tweets {
+
+  article{
+    width: 380px;
+    border: 1px solid silver;
+    border-radius: 5px;
+    margin: 0 auto;
+    background-color: white;
+    opacity: 0.5;
+    margin-bottom: 10px;
+    &:hover{
+      opacity: 1;
+    }
+  }
+
+  header{
+    background: #eee;
+    border-radius: 5px;
+    height: 70px;
+    margin-top: -21px;
+    padding-bottom: 20px;
+    .image{
+      float:left;
+      border-radius: 10px;
+      display: block;
+      max-height: 70px;
+      padding: 5px;
+    }
+  }
+
+  .name{
+    text-align: left;
+    padding: 15px 5px;
+  }
+
+  .email{
+    text-align: right;
+    margin-top: -70px;
+    font-size: 80%;
+    padding: 5px;
+  }
+
+  .text{
+    word-wrap: break-word;
+    text-align: left;
+    padding: 10px;
+    margin: auto;
+  }
+
+  footer{
+    border-top: 1px solid silver;
+    height: 30px;
+    i{
+      float: right;
+      padding: 10px;
+      font-size: 70%;
+    }
+  }
+
+  .date{
+    float:left;
+    font-size: 60%;
+    text-align: center;
+    margin-top: 10px;
+    padding-left: 5px;
+  }
+}
