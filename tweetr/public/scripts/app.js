@@ -1,9 +1,3 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
 
 //DOM ready function
 $(document).ready(function(){
@@ -26,7 +20,6 @@ function loadTweets(){
 }
 loadTweets();
 
-
 function renderTweets(tweets){
   $("#posted-tweets").empty();
   for (var i = 0; i < tweets.length; i++){
@@ -42,11 +35,8 @@ function escape(str) {
 }
 
 function timeSince(date) {
-
     var seconds = Math.floor((new Date() - date) / 1000);
-
     var interval = Math.floor(seconds / 31536000);
-
     if (interval > 1) {
         return interval + " years";
     }
@@ -68,8 +58,6 @@ function timeSince(date) {
     }
     return Math.floor(seconds) + " seconds";
 }
-
-
 
 function createTweetElement(tweet){
   var html = `<article class="TweetLog">

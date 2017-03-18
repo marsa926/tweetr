@@ -715,6 +715,16 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"\/public\/styles\/columnDrop.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/public\/styles\/columnDrop-min.css",
+		"oF": 0,
+		"oS": 0
+		},
 	"\/public\/styles\/layout.css": {
 		"aP": 1,
 		"bl": 0,
